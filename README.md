@@ -62,19 +62,35 @@ Look for the name of your repo. Then do
 ```
 cd REPO-NAME
 ```
-You're now in a local version of the repo. If you open up your file explorer you can find a folder with this name. Let's add a file:
+You're now in a local version of the repo. If you open up your file explorer you can find a folder with this name. Let's add a file (don't worry about this. You could alternatively just drag any files into the folder):
+
 ```
+echo "# Sample README" >> README.md
 ```
 
+Now we need to add the file to the list of files git tracks:
+```
+git add .
+```
+(this adds all files)
 
-add a new file somehow
-ADD
-COMMIT
-PULL
-see if anything needs changing
-PUSH
+Save all the changes so far. The message in the parentheses describes what changes you've made:
+```
+git commit -am "added readme"
+```
 
-Congrats! You're officially git!
+Since git is a collaborative tool, someone else could be making changes to a repo. We need to make sure we're up to date with any changes they've pushed to the remote repo:
+
+```
+git pull
+```
+
+Then save all your changes to the remote git repo (or GitHub in this case)
+```
+git push
+```
+
+Congrats! You're officially using git!
 
 ### Branches
 
