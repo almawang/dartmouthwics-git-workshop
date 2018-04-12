@@ -37,7 +37,7 @@ git config --global user.email "YOUR EMAIL"
 ```
 Now git will automatically attempt to sign into GitHub using the above email when you push your changes and prompt for your password.
 
-### Git Basics
+## Git Basics
 Now for actually using git and GitHub.
 
 Lets create your first project in GitHub. On https://github.com ,find the new repo button in the top right corner.
@@ -92,20 +92,41 @@ git push
 
 Congrats! You're officially using git!
 
-### Branches
+## Branches
 
-#### Create a local branch
-GIT BRANCH
-CHECKOUT
-make changes
-ADD/COMMIT
-PUSH -U origin BRANCHNAME
+Wait there's more! If you're working on a large project with everyone working on separate features, you don't constantly want other people's changes overlapping with yours. That's why you use *branches*, essentially copies of the repo that you can work on separately before combining with the master repo.
 
-Look at it on GitHub. Pull request it.
+### Create a local branch
+Do the command
+```
+git branch
+```
+This lists all the branches in your local git repo and indicates which one you're currently one. You should only have master and be on master at this point in the tutorial.
 
-#### Checkout a remote branch
+```
+git branch new-branch
+git checkout new-branch
+```
+The above code creates a new branch called `new-branch` and then switches into that branch.
 
-### Merge Conflicts
+Let's makes some changes into the branch.
+```
+echo "test" >> temp.txt
+```
+
+Now add, commit and push the changes
+```
+git add .
+git commit -am "made a new file"
+git push -u origin new-branch
+```
+See anything different? When you push a new branch to the remote repo, you need to "create" the whole branch in the remote repo, not just a file change. Therefore you have to tell git to push changes to a branch of the original repo. (-u is short for --set-upstream which essentially means push my changes to this location)
+
+Look at your repo on GitHub. Pull request it.
+
+### Checkout a remote branch
+
+## Merge Conflicts
 Sometimes when you pull someone else's changes it may conflict with your changes. This is called a **merge conflict** and it'll in your file look something like this:
 
 ```
@@ -118,15 +139,17 @@ Sometimes when you pull someone else's changes it may conflict with your changes
 
 Stay calm. Fix the conflict, add, commit and pull again. Then push the fixed conflict.
 
-## Other aspects of git
+# Other aspects of git
 
-### .gitignore file
+## .gitignore file
+TODO
 
-## Extra GitHub features
+# Extra GitHub features
 
-### USERNAME.github.io Site
+## USERNAME.github.io Site
+If you make a repo in GitHub named **YOURUSERNAME.github.io** with an index.html file
 
-### Credits
+# Credits
 Tutorial Instructions from [Nick Charlton](https://github.com/nickcharlton/git-workshop/blob/master/Guide%20to%20Git.pdf)
 
 Graphics and git concepts from [Intertech](https://www.intertech.com/Blog/introduction-to-git-concepts/)
