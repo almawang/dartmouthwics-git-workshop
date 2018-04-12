@@ -79,7 +79,7 @@ Save all the changes so far. The message in the parentheses describes what chang
 git commit -am "added readme"
 ```
 
-Since git is a collaborative tool, someone else could be making changes to a repo. We need to make sure we're up to date with any changes they've pushed to the remote repo:
+Since git is a collaborative tool, someone else could be making changes to a repo. We need to make sure we're up to date with any changes they've pushed to the remote repo. Git will combine most changes so they interfere, calling *merging*:
 
 ```
 git pull
@@ -96,7 +96,6 @@ Congrats! You're officially using git!
 
 Wait there's more! If you're working on a large project with everyone working on separate features, you don't constantly want other people's changes overlapping with yours. That's why you use *branches*, essentially copies of the repo that you can work on separately before combining with the master repo.
 
-### Create a local branch
 Do the command
 ```
 git branch
@@ -120,11 +119,28 @@ git add .
 git commit -am "made a new file"
 git push -u origin new-branch
 ```
-See anything different? When you push a new branch to the remote repo, you need to "create" the whole branch in the remote repo, not just a file change. Therefore you have to tell git to push changes to a branch of the original repo. (-u is short for --set-upstream which essentially means push my changes to this location)
+See anything different? When you push a new branch to the remote repo, you need to "create" the whole branch in the remote repo, not just a file change. Therefore you have to tell git to push changes to a branch of the original repo. (-u is short for --set-upstream which essentially means push my changes to this location
 
-Look at your repo on GitHub. Pull request it.
+![branches](/images/branches.png)
 
-### Checkout a remote branch
+Look at your repo on GitHub. Click on the dropdown that says "branch" and you'll see your new branch! Now you can work on this branch without stressing about other people's work causing issues with your work.
+
+### Pull Request
+
+Say you're done with your branch, you're ready to combine it with the full project. To do so you do a **pull request**.
+
+Click on "branches" in the top bar:
+![topbar](/images/topbar.png)
+
+Next to your branch you'll see a button that says "New pull request". Describe your changes and click "Create pull request"
+
+![create pull request](/images/createpullrequest.png)
+
+Normally on a large project or at a company someone more in charge would look to make sure the changes are okay and then merge the pull request, but for the same of this tutorial, follow the instructions to merge the branch.
+
+Congrats! You're using branches like a pro!.
+
+When you're done with a branch and no longer working with it, and to keep the number of branches from going too crazy, make sure to delete it from the GitHub (on the branches tab) and locally (with `git branch -d new-branch`, where `new-branch` is the name of your branch). 
 
 ## Merge Conflicts
 Sometimes when you pull someone else's changes it may conflict with your changes. This is called a **merge conflict** and it'll in your file look something like this:
@@ -147,7 +163,7 @@ TODO
 # Extra GitHub features
 
 ## USERNAME.github.io Site
-If you make a repo in GitHub named **YOURUSERNAME.github.io** with an index.html file
+If you make a repo in GitHub named **YOURUSERNAME.github.io** with an index.html file, GitHub will automatically deploy that html to the url **YOURUSERNAME.github.io**!
 
 # Credits
 Tutorial Instructions from [Nick Charlton](https://github.com/nickcharlton/git-workshop/blob/master/Guide%20to%20Git.pdf)
