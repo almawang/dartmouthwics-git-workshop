@@ -132,7 +132,15 @@ Say you're done with your branch, you're ready to combine it with the full proje
 Click on "branches" in the top bar:
 ![topbar](/images/topbar.png)
 
-Next to your branch you'll see a button that says "New pull request".
+Next to your branch you'll see a button that says "New pull request". Describe your changes and click "Create pull request"
+
+![create pull request](/images/createpullrequest.png)
+
+Normally on a large project or at a company someone more in charge would look to make sure the changes are okay and then merge the pull request, but for the same of this tutorial, follow the instructions to merge the branch.
+
+Congrats! You're using branches like a pro!.
+
+When you're done with a branch and no longer working with it, and to keep the number of branches from going too crazy, make sure to delete it from the GitHub (on the branches tab) and locally (with `git branch -d new-branch`, where `new-branch` is the name of your branch). 
 
 ## Merge Conflicts
 Sometimes when you pull someone else's changes it may conflict with your changes. This is called a **merge conflict** and it'll in your file look something like this:
